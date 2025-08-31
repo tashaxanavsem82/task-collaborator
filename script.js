@@ -5,3 +5,7 @@ const socket = io();
 socket.on('connect', () => {
     console.log('Connected to the server');
 });
+
+socket.on('connect_error', (err) => {
+    console.error('Connection failed:', err);
+});
