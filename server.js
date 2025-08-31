@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // MongoDB connection
-const mongoURI = 'mongodb://localhost:27017/task-collaborator';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/task-collaborator';
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
