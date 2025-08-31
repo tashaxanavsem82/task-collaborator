@@ -10,8 +10,8 @@ socket.on('connect_error', (err) => {
     console.error('Connection failed:', err);
 });
 
-socket.on('disconnect', () => {
-    console.warn('Disconnected from the server');
+socket.on('disconnect', (reason) => {
+    console.warn('Disconnected from the server. Reason:', reason);
 });
 
 socket.on('reconnect_attempt', () => {
