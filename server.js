@@ -14,6 +14,11 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
 });
 
+// 404 error handler
+app.use((req, res) => {
+  res.status(404).send('404 Not Found');
+});
+
 io.on('connection', (socket) => {
   console.log('New client connected');
   socket.on('disconnect', () => {
