@@ -8,7 +8,8 @@ const server = http.createServer(app);
 const io = socketIo(server);
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/task-collaborator', { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoURI = 'mongodb://localhost:27017/task-collaborator';
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/index.html');
