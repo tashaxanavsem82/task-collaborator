@@ -9,3 +9,11 @@ socket.on('connect', () => {
 socket.on('connect_error', (err) => {
     console.error('Connection failed:', err);
 });
+
+socket.on('disconnect', () => {
+    console.warn('Disconnected from the server');
+});
+
+socket.on('reconnect_attempt', () => {
+    console.log('Attempting to reconnect...');
+});
